@@ -1,0 +1,15 @@
+name: Continuous Integration
+on: [push]
+jobs:
+  buildAndTest:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install Dependencies
+        run: npm install
+      - name: ESLint Action
+        run: npm run lint
+      - name: Run Test
+        run: npm run test
+
